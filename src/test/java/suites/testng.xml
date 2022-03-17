@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SuiteWiki">
+    <parameter name="Navegador" value="CHROME"></parameter>
+    <test thread-count="5" name="WikiTest">
+        <classes>
+            <class name="com.selenium.pages.WikiTest"></class>
+        </classes>
+    </test> <!-- TestWiki -->
+</suite> <!-- Suite -->

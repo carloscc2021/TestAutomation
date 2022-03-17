@@ -1,6 +1,7 @@
 # ide
 prueba_solo.iml
 .idea/
+/.git
 
 # project
 target/
