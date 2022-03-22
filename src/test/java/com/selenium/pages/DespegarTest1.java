@@ -12,7 +12,7 @@ import pageObject.DespegarHomePage;
 import pageObject.DespegarResultPage;
 import until.BaseTest;
 
-public class DespegarTest extends BaseTest {
+public class DespegarTest1 extends BaseTest {
 
     private WebDriver driver = null;
 
@@ -25,17 +25,17 @@ public class DespegarTest extends BaseTest {
 
     }
 
-    @Test(groups= {"grupo3"}, dataProvider = "ciudad")
+    @Test(groups= {"group1"}, dataProvider = "ciudad", description = "Validar busqueda en Despegar de 3 ciudades y mostrar nombre del primer hotel")
     public void AlojamientoProvide(String ciudades) throws InterruptedException {
 
         DespegarHomePage homePage = new DespegarHomePage(driver);
         Assert.assertTrue(homePage.DespegarVisible());
         homePage.iraAlojamiento();
         DespegarAlojamientoPage alojamiento = new DespegarAlojamientoPage(driver);
-        alojamiento.alojamiento(ciudades);
+        alojamiento.alojamientos(ciudades);
         DespegarResultPage result = new DespegarResultPage(driver);
         Assert.assertTrue(result.PrimeraBusqueda());
-
+        result.NombreHotel();
     }
 
     @AfterMethod(alwaysRun=true)
@@ -48,4 +48,5 @@ public class DespegarTest extends BaseTest {
         return new Object[][] { { "Necochea, Buenos Aires, Argentina" }, { "San Carlos de Bariloche, Rio Negro, Argentina" },
                 { "Puerto Iguazú, Misiones, Argentina" } };
     }
+
 }

@@ -45,30 +45,29 @@ public class DespegarAlojamientoPage {
         return this.wait(locator);
     }
 
-    public DespegarResultPage alojamiento(String ciudad) throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    public DespegarResultPage alojamientos(String ciudad) throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        destino.click();
         wait.until(ExpectedConditions.visibilityOf(destino));
+        destino.click();
+        destino.clear();
+        Thread.sleep(2000);
         destino.sendKeys(ciudad);
         Thread.sleep(500);
         destino.sendKeys(Keys.TAB);
-        Thread.sleep(1000);
 
         wait.until(ExpectedConditions.visibilityOf(fechaDesde));
         fechaDesde.click();
-        Thread.sleep(500);
 
         wait.until(ExpectedConditions.visibilityOf(fechaIda));
         fechaIda.click();
-        Thread.sleep(500);
 
         fechaVuelta.click();
         wait.until(ExpectedConditions.visibilityOf(fechaVuelta));
 
         habitaciones.click();
-        Thread.sleep(500);
 
+        wait.until(ExpectedConditions.visibilityOf(adulto));
         adulto.click();
 
         menor.click();

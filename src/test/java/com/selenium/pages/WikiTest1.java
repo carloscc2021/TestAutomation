@@ -8,10 +8,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pageObject.WikiHomePage;
-import pageObject.WikiResultHome;
+import pageObject.WikiResultsPage;
 import until.BaseTest;
 
-public class WikiTest extends BaseTest {
+public class WikiTest1 extends BaseTest {
         private WebDriver driver = null;
 
         @BeforeMethod
@@ -24,10 +24,10 @@ public class WikiTest extends BaseTest {
         }
 
         @Test(dataProvider = "buscar")
-        public void ValidarBusquedaWikiPedia(String Busqueda) throws Exception {
+        public void testBusquedaWikiPedia(String busqueda) throws Exception {
             WikiHomePage homePage = new WikiHomePage(driver);
             Assert.assertTrue(homePage.searchInputIsVisible());
-            WikiResultHome resultPage = homePage.searchInput(Busqueda);
+            WikiResultsPage resultPage = homePage.searchText(busqueda);
             Assert.assertTrue(resultPage.tituloEsVisible());
         }
 

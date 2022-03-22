@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class WikiHomePage extends BaseTest {
     @FindBy(id = "searchInput")
-    WebElement searchInput;
+    WebElement searchText;
     private WebDriver driver = null;
 
     public WikiHomePage(WebDriver driver) {
@@ -16,13 +16,12 @@ public class WikiHomePage extends BaseTest {
         PageFactory.initElements(driver, this);
     }
     public boolean searchInputIsVisible() {
-        return this.searchInput.isDisplayed();
+        return this.searchText.isDisplayed();
     }
-    public WikiResultHome searchInput(String text) {
-        this.searchInput.sendKeys(text);
-        searchInput.submit();
-
-        return new WikiResultHome(this.driver);
+    public WikiResultsPage searchText(String text) {
+        this.searchText.sendKeys(text);
+        searchText.submit();
+        return new WikiResultsPage(this.driver);
     }
 }
 

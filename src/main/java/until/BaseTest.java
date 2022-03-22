@@ -25,11 +25,18 @@ public class BaseTest {
         WebDriver driver = null;
 
         switch (browserName) {
+
             case "FIREFOX": {
                 System.setProperty("webdriver.gecko.driver", ".drivers/firefox/geckodriver");
                 driver = new FirefoxDriver();
                 break;
             }
+            /*case "CHROME": {
+                System.setProperty("webdriver.chrome.driver", "./drivers/chrome/chromedriver");
+                driver = new ChromeDriver();
+                break;
+            }*/
+
             default: {
                 System.setProperty("webdriver.chrome.driver", "./drivers/chrome/chromedriver");
                 driver = new ChromeDriver();

@@ -41,6 +41,12 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.0.0-M5</version>
         </dependency>
+        <dependency>
+            <groupId>net.sourceforge.tess4j</groupId>
+            <artifactId>tess4j</artifactId>
+            <version>5.1.1</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -56,8 +62,7 @@
                     <version>2.12</version>
                     <configuration>
                         <suiteXmlFiles>
-                            <suiteXmlFile>src/test/java/suites/testng.xml</suiteXmlFile>
-                            <suiteXmlFile>src/test/java/suites/testng1.xml</suiteXmlFile>
+                            <suiteXmlFile>src/test/java/suit/${suites}</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>

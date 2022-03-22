@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="SuiteDespegar">
-    <parameter name="Navegador" value="CHROME"></parameter>
-    <test thread-count="5" name="DespegarTest">
+    <parameter name="Navegador" value="CHROME"/>
+    <test thread-count="1" name="DespegarTest">
         <groups>
             <run>
-                <include name="grupo1"></include>
+                <include name="group1"/>
+                <exclude name="group2"/>
+                <include name="group3"/>
             </run>
         </groups>
         <classes>
-            <class name="com.selenium.pages.DespegarTest" />
+            <class name="com.selenium.pages.DespegarTest1" />
+            <class name="com.selenium.pages.DespegarTest2" />
+            <class name="com.selenium.pages.DespegarTest3" />
         </classes>
     </test> <!-- TestDespegar -->
 </suite> <!-- SuiteDespegar -->
